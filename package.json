@@ -1,0 +1,36 @@
+{
+  "name": "xmlconv",
+  "version": "0.0.1",
+  "description": "XML conversion by convention",
+  "keywords": [
+    "xml",
+    "conversion",
+    "convention",
+    "parker",
+    "spark",
+    "badgerfish",
+    "libxml",
+    "json",
+    "js"
+  ],
+  "bin": {
+    "xmlconv": "bin/xmlconv.js"
+  },
+  "homepage": "https://github.com/chbrown/xmlconv",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chbrown/xmlconv.git"
+  },
+  "author": "Christopher Brown <io@henrian.com> (http://henrian.com)",
+  "license": "MIT",
+  "dependencies": {
+    "libxmljs": "*",
+    "optimist": "*"
+  },
+  "devDependencies": {
+    "tap": "*"
+  },
+  "scripts": {
+    "test": "tap test"
+  }
+}

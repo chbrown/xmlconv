@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<media>
+  <book id="1">
+    <title>XML: The Good Parts</title>
+    <author>Less Manning</author>
+    <author>Nulon Catorze</author>
+    <blurb>
+      This is an awesome book, you guys!
+    </blurb>
+  </book>
+  <book id="2">
+    <title>Last in Line</title>
+    <author>Vera Cool</author>
+  </book>
+  <album id="3">
+    <musician>Regina Spektor</musician>
+    <title>For Real</title>
+  </album>
+</media>
