@@ -22,14 +22,18 @@ var obj = xmlconv(xml, {convention: 'parker'});
 console.log(JSON.stringify(obj, null, '  '));
 ```
 
+Currently Parker is only partly implemented, along with a similar but tighter convention I'm calling "Castle".
+
 ## TODO
 
-Currently only a semblance of Parker is implemented. Add others:
-
-* Actual Parker
+* Complete the implementation of Parker
+  (currently have failing tests from the [spec](http://code.google.com/p/xml2json-xslt/wiki/TransformingRules))
 * Spark
-* Badgerfish
-* _etc._
+* [Badgerfish](http://dropbox.ashlock.us/open311/json-xml/) and at [sklar's site](http://www.sklar.com/badgerfish/)
+* GData
+* Abdera
+* JsonML
+* oData
 
 [Conventions](http://wiki.open311.org/JSON_and_XML_Conversion)
 
