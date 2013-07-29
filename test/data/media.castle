@@ -1,0 +1,16 @@
+{
+  "media": {
+    "book": [{
+      "title": "XML: The Good Parts",
+      "author": ["Less Manning", "Nulon Catorze"],
+      "blurb": "This is an awesome book, you guys!"
+    }, {
+      "title": "Last in Line",
+      "author": "Vera Cool"
+    }],
+    "album": {
+      "musician": "Regina Spektor",
+      "title": "For Real"
+    }
+  }
+}

@@ -3,11 +3,11 @@
 var fs = require('fs');
 var path = require('path');
 
-var xmlconv = require('../');
+var xmlconv = require('..');
 
 function main() {
   var optimist = require('optimist')
-    .usage('Usage: xmlconv <doc.xml --convention parker')
+    .usage('Usage: xmlconv <doc.xml --convention castle')
     .describe({
       convention: 'XML conversion convention to use',
       format: 'indent json output',
@@ -20,7 +20,7 @@ function main() {
     .alias({verbose: 'v', convention: 'c'})
     .default({
       format: true,
-      convention: 'parker',
+      convention: 'castle',
     });
 
   var argv = optimist.argv;

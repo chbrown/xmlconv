@@ -1,0 +1,6 @@
+{
+  "to": "Lester Twohig",
+  "from": "Heart Connors",
+  "subject": "XML",
+  "body": "The problem with XML is that XML is not DRY. Attributes? Elements? Who's to say?"
+}

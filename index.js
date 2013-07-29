@@ -2,10 +2,9 @@
 
 var convert = module.exports = function(xml, opts) {
   /** Convert a string or stream of XML into a javascript object.
-   *    - opts.convention is a string you can set to specify what convention to use.
-   *      The default convention is 'parker'.
+   *  @opts.convention is a string you can set to specify what convention to use.
    */
-  var convention_name = opts.convention || 'parker';
+  var convention_name = opts.convention || 'castle';
   var convention = require('./lib/' + convention_name);
   return convention(xml, opts);
 };
