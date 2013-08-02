@@ -2,32 +2,48 @@
 
     npm install xmlconv
 
-Powered by [libxmljs](https://github.com/polotek/libxmljs).
+Powered by [libxmljs](https://github.com/polotek/libxmljs), see the [libxmljs API documentation](https://github.com/polotek/libxmljs/tree/master/docs/api) for help implementing other conventions.
 
 ## Example
+
+Convert a pretty simple document according to the Parker convention:
 
 ```javascript
 var xmlconv = require('xmlconv');
 var xml = [
   '<?xml version="1.0" ?>',
   '<note>',
-  '  <to>Chris</to>',
-  '  <from>Other Chris</from>',
+  '  <to>The W3C</to>',
+  '  <from>Chris</from>',
   '  <subject>XML</subject>',
-  '  <body>I just wish XML was easier to read, you know?</body>',
+  '  <body>I just wish XML was drier.</body>',
   '</note>'
 ].join('\n');
-
 var obj = xmlconv(xml, {convention: 'parker'});
 console.log(JSON.stringify(obj, null, '  '));
 ```
 
-Currently Parker is only partly implemented, along with a similar but tighter convention I'm calling "Castle".
+This will print the following JSON output:
+
+```json
+{
+  "to": "The W3C",
+  "from": "Chris",
+  "subject": "XML",
+  "body": "I just wish XML was drier."
+}
+```
+
+## Supported conventions
+
+* parker
+* castle
+* dom (not pure JSON)
 
 ## TODO
 
-* Complete the implementation of Parker
-  (currently have failing tests from the [spec](http://code.google.com/p/xml2json-xslt/wiki/TransformingRules))
+Implement additional conventions:
+
 * Spark
 * [Badgerfish](http://dropbox.ashlock.us/open311/json-xml/) and at [sklar's site](http://www.sklar.com/badgerfish/)
 * GData
@@ -36,6 +52,18 @@ Currently Parker is only partly implemented, along with a similar but tighter co
 * oData
 
 [Conventions](http://wiki.open311.org/JSON_and_XML_Conversion)
+
+## Testing
+
+Continuous integration:
+
+[![Travis CI Build Status](https://travis-ci.org/chbrown/xmlconv.png?branch=master)](https://travis-ci.org/chbrown/xmlconv)
+
+Running tests locally:
+
+    npm test
+
+See `node-tap` [documentation](https://github.com/isaacs/node-tap/blob/master/lib/tap-assert.js) for the implications of the various testing verbs (e.g., `equal` vs. `equivalent` vs. `similar`).
 
 ## License
 

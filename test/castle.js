@@ -11,6 +11,6 @@ test('castle files', function (t) {
     var pair = helpers.readTranslationPair(name, 'castle');
     var converted = xmlconv(pair.xml, {convention: 'castle'});
     var expected = JSON.parse(pair.json);
-    t.similar(converted, expected, 'XML was not converted under castle convention');
+    t.equivalent(converted, expected, 'XML should be converted with castle convention');
   });
 });

@@ -26,7 +26,7 @@ test('cli', function (t) {
   }).on('end', function() {
     var output = JSON.parse(stdout);
     var expected = JSON.parse(pair.json);
-    t.similar(output, expected, 'bin/xmlconv.js output did not match expectations');
+    t.equivalent(output, expected, 'bin/xmlconv.js output should match expectations');
     t.end();
   });
 });
