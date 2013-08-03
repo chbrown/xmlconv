@@ -29,11 +29,7 @@ function main() {
     optimist.showHelp();
   }
   else if (argv.version) {
-    var package_json_path = path.join(__dirname, '../package.json');
-    fs.readFile(package_json_path, 'utf8', function(err, data) {
-      var obj = JSON.parse(data);
-      console.log(obj.version);
-    });
+    console.log(require('../package').version);
   }
   else {
     // set up destination here, so that testing the curl function is easier.

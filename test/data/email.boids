@@ -1,0 +1,21 @@
+{
+  "*": "note",
+  "$": {},
+  "_": null,
+  "to": [{
+    "$": {},
+    "_": "Lester Twohig"
+  }],
+  "from": [{
+    "$": {},
+    "_": "Heart Connors"
+  }],
+  "subject": [{
+    "$": {},
+    "_": "XML"
+  }],
+  "body": [{
+    "$": {},
+    "_": "The problem with XML is that XML is not DRY. Attributes? Elements? Who's to say?"
+  }]
+}

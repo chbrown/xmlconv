@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path');
 
 /** No tests, just test helpers.
- */
+*/
 
 exports.readTranslationPair = function(name, convention) {
   var xml_path = path.join(__dirname, 'data', name + '.xml');

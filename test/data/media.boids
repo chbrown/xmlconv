@@ -1,0 +1,47 @@
+{
+  "*": "media",
+  "$": {},
+  "_": null,
+  "book": [{
+    "$": {"id": 1},
+    "_": null,
+    "title": [{
+      "$": {},
+      "_": "XML: The Good Parts"
+    }],
+    "author": [{
+      "$": {},
+      "_": "Less Manning"
+    }, {
+      "$": {},
+      "_": "Nulon Catorze"
+    }],
+    "blurb": [{
+      "$": {},
+      "_": "This is an awesome book, you guys!"
+    }]
+  }, {
+    "$": {"id": 2},
+    "_": null,
+    "title": [{
+      "$": {},
+      "_": "Last in Line"
+    }],
+    "author": [{
+      "$": {},
+      "_": "Vera Cool"
+    }]
+  }],
+  "album": [{
+    "$": {"id": 3},
+    "_": null,
+    "musician": [{
+      "$": {},
+      "_": "Regina Spektor"
+    }],
+    "title": [{
+      "$": {},
+      "_": "For Real"
+    }]
+  }]
+}

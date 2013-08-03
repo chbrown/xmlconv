@@ -80,14 +80,3 @@ test('parker extended spec', function (t) {
 
   t.end();
 });
-
-test('parker files', function (t) {
-  var files = ['email', 'media'];
-  t.plan(files.length);
-  files.forEach(function(name) {
-    var pair = helpers.readTranslationPair(name, 'parker');
-    var converted = xmlconv(pair.xml, {convention: 'parker'});
-    var expected = JSON.parse(pair.json);
-    t.equivalent(converted, expected, 'XML should be converted according to parker convention');
-  });
-});

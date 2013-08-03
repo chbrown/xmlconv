@@ -36,9 +36,13 @@ This will print the following JSON output:
 
 ## Supported conventions
 
-* parker
-* castle
-* dom (not pure JSON)
+| Convention | Email example | Media example |
+|:-----------|:--------------|:--------------|
+| **XML**    | [email](test/data/email.xml) | [media](test/data/media.xml) |
+| parker     | [email](test/data/email.parker) | [media](test/data/media.parker) |
+| castle     | [email](test/data/email.castle) | [media](test/data/media.castle) |
+| boids      | [email](test/data/email.boids) | [media](test/data/media.boids) |
+| dom        | (not pure JSON) | |
 
 ## TODO
 
