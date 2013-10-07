@@ -6,20 +6,36 @@ var path = require('path');
 var xmlconv = require('..');
 
 function main() {
+  var lib_path = require.resolve('../lib');
+  var conventions = fs.readdirSync(path.dirname(lib_path)).filter(function(filename) {
+    return filename.match(/\.js$/) && filename != 'index.js';
+  }).map(function(filename) {
+    return path.basename(filename, '.js');
+  });
+
   var optimist = require('optimist')
-    .usage('Usage: xmlconv <doc.xml --convention castle')
+    .usage([
+      'Usage: xmlconv <doc.xml',
+      '',
+      'Convert XML into JSON following one of several conventions:',
+      '  ' + conventions.join('\n  '),
+      '',
+      'Powered by libxml2',
+    ].join('\n'))
     .describe({
-      convention: 'XML conversion convention to use',
-      format: 'indent json output',
+      convention: 'convention to use in transformation',
+      oneline: 'compress json output',
 
       help: 'print this help message',
       verbose: 'print extra output',
       version: 'print version',
     })
-    .boolean(['help', 'verbose', 'version'])
-    .alias({verbose: 'v', convention: 'c'})
+    .boolean(['oneline', 'help', 'verbose', 'version'])
+    .alias({
+      verbose: 'v',
+      convention: 'c',
+    })
     .default({
-      format: true,
       convention: 'castle',
     });
 
@@ -32,23 +48,14 @@ function main() {
     console.log(require('../package').version);
   }
   else {
-    // set up destination here, so that testing the curl function is easier.
     xmlconv.readToEnd(process.stdin, function(err, content) {
-      if (err) {
-        throw err;
+      if (err) throw err;
+
+      if (argv.verbose) {
+        console.error('Parsing XML: ' + content);
       }
-      else {
-        if (argv.verbose) {
-          console.log('Parsing XML: ' + content);
-        }
-        var obj = xmlconv(content, argv);
-        if (argv.format) {
-          console.log(JSON.stringify(obj, null, '  '));
-        }
-        else {
-          console.log(JSON.stringify(obj));
-        }
-      }
+      var obj = xmlconv(content, {convention: argv.convention});
+      console.log(JSON.stringify(obj, null, argv.oneline ? null : '  '));
     });
   }
 }

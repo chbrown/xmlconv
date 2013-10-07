@@ -9,6 +9,7 @@ var convert = module.exports = function(xml, opts) {
   return convention(xml, opts);
 };
 
+// attach the readToEnd convenience function to the single function this module exports
 var readToEnd = convert.readToEnd = function(readable_stream, callback) {
   // callback signature: function(err, content)
   var content = '';
