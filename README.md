@@ -1,8 +1,12 @@
 # xmlconv: XML conversion by convention
 
+[![latest version published to npm](https://badge.fury.io/js/xmlconv.svg)](https://www.npmjs.com/package/xmlconv)
+
     npm install xmlconv
 
-Powered by [libxmljs](https://github.com/polotek/libxmljs), see the [libxmljs API documentation](https://github.com/polotek/libxmljs/tree/master/docs/api) for help implementing other conventions.
+Powered by [`libxmljs`](https://github.com/polotek/libxmljs),
+see the [`libxmljs` API documentation](https://github.com/polotek/libxmljs/tree/master/docs/api) for help implementing other conventions.
+
 
 ## Example
 
@@ -34,6 +38,7 @@ This will print the following JSON output:
 }
 ```
 
+
 ## Supported conventions
 
 | Convention | Email example | Media example |
@@ -43,6 +48,7 @@ This will print the following JSON output:
 | castle     | [email](test/data/email.castle) | [media](test/data/media.castle) |
 | boids      | [email](test/data/email.boids) | [media](test/data/media.boids) |
 | dom        | (not pure JSON) | |
+
 
 ## TODO
 
@@ -57,6 +63,7 @@ Implement additional conventions:
 
 [Conventions](http://wiki.open311.org/JSON_and_XML_Conversion)
 
+
 ## Testing
 
 Continuous integration:
@@ -69,6 +76,8 @@ Running tests locally:
 
 See `node-tap` [documentation](https://github.com/isaacs/node-tap/blob/master/lib/tap-assert.js) for the implications of the various testing verbs (e.g., `equal` vs. `equivalent` vs. `similar`).
 
+
 ## License
 
-Copyright © 2013 Christopher Brown. [MIT Licensed](LICENSE).
+Copyright © 2013 Christopher Brown.
+[MIT Licensed](https://chbrown.github.io/licenses/MIT/#2013).
