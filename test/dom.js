@@ -1,12 +1,10 @@
-'use strict'; /*jslint es5: true, node: true, indent: 2 */
 var fs = require('fs');
 var path = require('path');
-var test = require('tap').test;
+var {test} = require('tap');
 
 var xmlconv = require('..');
-var helpers = require('./');
 
-test('dom media file', function (t) {
+test('dom media file', function(t) {
   var xml = fs.readFileSync(path.join(__dirname, 'data', 'media.xml'), 'utf8');
   var dom = xmlconv(xml, {convention: 'dom'});
 

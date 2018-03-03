@@ -1,22 +1,33 @@
-'use strict'; /*jslint es5: true, node: true, indent: 2 */
 var fs = require('fs');
 var path = require('path');
 var child_process = require('child_process');
-var test = require('tap').test;
+var {test} = require('tap');
 
 var xmlconv = require('..');
-var helpers = require('./');
 
-test('import', function (t) {
+/** Testing helper used below and in test/data-pairs.js */
+function readTranslationPair(name, convention) {
+  var xml_path = path.join(__dirname, 'data', name + '.xml');
+  var json_path = path.join(__dirname, 'data', name + '.' + convention);
+  return {
+    xml: fs.readFileSync(xml_path, 'utf8'),
+    xml_path: xml_path,
+    json: fs.readFileSync(json_path, 'utf8'),
+    json_path: json_path,
+  };
+}
+exports.readTranslationPair = readTranslationPair;
+
+test('import', function(t) {
   t.ok(xmlconv !== undefined, 'xmlconv should load from the current directory');
   t.end();
 });
 
-test('cli', function (t) {
+test('cli', function(t) {
   var xmlconv_bin = path.join(__dirname, '..', 'bin', 'xmlconv.js');
   var proc = child_process.spawn(xmlconv_bin, ['--convention', 'castle'], {stdio: 'pipe'});
 
-  var pair = helpers.readTranslationPair('media', 'castle');
+  var pair = readTranslationPair('media', 'castle');
   // but we want to stream `pair.xml`, so read it again.
   fs.createReadStream(pair.xml_path).pipe(proc.stdin);
 

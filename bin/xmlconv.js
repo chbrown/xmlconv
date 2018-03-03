@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-'use strict'; /*jslint es5: true, node: true, indent: 2 */
 var fs = require('fs');
 var path = require('path');
 
@@ -14,30 +13,30 @@ function main() {
   });
 
   var optimist = require('optimist')
-    .usage([
-      'Usage: xmlconv <doc.xml',
-      '',
-      'Convert XML into JSON following one of several conventions:',
-      '  ' + conventions.join('\n  '),
-      '',
-      'Powered by libxml2',
-    ].join('\n'))
-    .describe({
-      convention: 'convention to use in transformation',
-      oneline: 'compress json output',
+  .usage([
+    'Usage: xmlconv <doc.xml',
+    '',
+    'Convert XML into JSON following one of several conventions:',
+    '  ' + conventions.join('\n  '),
+    '',
+    'Powered by libxml2',
+  ].join('\n'))
+  .describe({
+    convention: 'convention to use in transformation',
+    oneline: 'compress json output',
 
-      help: 'print this help message',
-      verbose: 'print extra output',
-      version: 'print version',
-    })
-    .boolean(['oneline', 'help', 'verbose', 'version'])
-    .alias({
-      verbose: 'v',
-      convention: 'c',
-    })
-    .default({
-      convention: 'castle',
-    });
+    help: 'print this help message',
+    verbose: 'print extra output',
+    version: 'print version',
+  })
+  .boolean(['oneline', 'help', 'verbose', 'version'])
+  .alias({
+    verbose: 'v',
+    convention: 'c',
+  })
+  .default({
+    convention: 'castle',
+  });
 
   var argv = optimist.argv;
 
@@ -60,4 +59,6 @@ function main() {
   }
 }
 
-if (require.main === module) { main(); }
+if (require.main === module) {
+  main();
+}

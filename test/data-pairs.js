@@ -1,13 +1,12 @@
-'use strict'; /*jslint es5: true, node: true, indent: 2 */
-var test = require('tap').test;
+var {test} = require('tap');
 
 var xmlconv = require('..');
-var helpers = require('./');
+var {readTranslationPair} = require('./bin');
 
 var conventions = ['boids', 'castle', 'parker'];
 var files = ['email', 'media'];
 
-test('data xml-translation file pairs', function (t) {
+test('data xml-translation file pairs', function(t) {
   /** The Dom convention does not reduce to pure JSON, so it's not supported here.
 
   - For each convention,
@@ -20,7 +19,7 @@ test('data xml-translation file pairs', function (t) {
     t.test('xml -> ' + convention, function(t) {
       t.plan(files.length);
       files.forEach(function(name) {
-        var pair = helpers.readTranslationPair(name, convention);
+        var pair = readTranslationPair(name, convention);
         var converted = xmlconv(pair.xml, {convention: convention});
         var expected = JSON.parse(pair.json);
         t.equivalent(converted, expected, 'XML file pair should be converted according to ' + convention + ' convention');
